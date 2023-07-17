@@ -2,10 +2,15 @@ import http from "http";
 
 const server = http.createServer((_req, res) => {
   res.writeHead(200, {
-    "Content-Type": "text/plain",
-    "Khaled-Allam": "Just for Test!.",
+    "Content-Type": "application/json",
+    "Any-Custom-Message": "Just for Test!.",
   });
-  res.end("Hello world!.");
+  res.end(
+    JSON.stringify({
+      id: 1,
+      name: "Khaled Allam",
+    })
+  );
 });
 
 const PORT = 3000;
